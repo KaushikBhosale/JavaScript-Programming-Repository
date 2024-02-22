@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Error Handling [try,catch blocks], Error Object & finally block</h1>
+
+    <script>
+        // // try catch block
+        // try {
+        //     console.log(rahul);
+        // } catch (error) {
+        //     console.log(error);
+        // }
+
+        // try {
+        //     setTimeout(() => {
+        //         console.log(sjbd); // It wont catch the error in asynchronous
+        //     }, 1000);
+        // } catch (error) {
+        //     console.log(error);
+        // }
+
+        // setTimeout(() => {
+        //     try {
+        //         console.log(sjbd);
+        //     } catch (error) {
+        //             console.log(error);
+        //         }
+        // }, 2000);
+
+        // // Error Object
+        // try {
+
+        //     console.log(harry);
+        //     // throw new Error("Kaushik is not passionate in coding");
+        //     throw new ReferenceError("Oh my god");
+        // } catch (error) {
+        //     console.log(error);
+        //     console.log(error.message, " error message");
+        //     console.log(error.name, " error name");
+        //     console.log(error.stack, "Stack");
+        // }
+
+        // // Custom Error
+        // try {
+        //     let age = prompt("Enter the valid AGE :");
+        //     age = Number.parseInt(age);
+        //     if (age > 0) {
+        //         alert("Age is valid");
+        //     }
+        //     else{
+        //         throw ReferenceError("You Entered Invalid Age");
+        //     }
+        // } catch (e) {
+        //     console.log(e);
+        // }
+        // console.log("Program/ Script is Still Running");
+
+        // // finnaly block
+        // try {
+        //     let u=9;
+        //     console.log(u);
+        //     console.log(ui);
+        // } catch (e) {
+        //     console.log(e);
+        //     console.log(ui);
+        // } finally {
+        //     console.log("Executed The Code");
+        //     //  used for close the  file
+        //     // Exit the loop
+        //     // Write to the log file
+        // }
+        
+        const f=()=>{
+            try {
+                let u=9;
+                console.log(u);
+                console.log(ui);
+            } catch (e) {
+                console.log(e);
+            } finally {
+                console.log("Executed The Code");
+                //  used for close the  file
+                // Exit the loop
+                // Write to the log file
+            }
+        }
+        f();
+        console.log("Done");
+    </script>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

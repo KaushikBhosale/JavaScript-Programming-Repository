@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Fetch API</h1>
+
+    <script>
+        // freee API of weather data
+        // https://goweather.herokuapp.com/weather/Rome
+
+        let p = fetch("https://goweather.herokuapp.com/weather/Ny");
+
+        p.then(function (v1) {
+            console.log(v1.status);
+            console.log(v1.ok);
+            return v1.json();           // give value in object
+            
+            // console.log(v2.headers); // Additional our data
+            // return v1.text();        // give value in String
+            // return v1.blob();
+            // return v1.arrayBuffer();
+        }).then(function (v2) {
+            console.log(v2);
+        })
+    </script>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassName and ClassList</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .yellow {
+            background-color: yellow;
+            color: bisque;
+        }
+
+        .red {
+            background-color: red;
+            color: bisque;
+        }
+
+        .text-dark {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ClassName and ClassList</h1>
+    <div id="first" class="yellow text-dark">
+        <span>Hey i am fine </span>
+    </div>
+
+    <script>
+        let x = document.getElementById("first");
+
+        x.className = "text-dark red";
+        console.log(x.classList);
+
+        x.classList.remove("red");
+        x.classList.add("yellow");
+
+        console.log(x.classList.contains("red"));
+        console.log(x.classList.contains("yellow"));
+        
+        x.classList.toggle("red");
+        x.classList.toggle("red");
+        x.classList.toggle("red");
+    </script>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

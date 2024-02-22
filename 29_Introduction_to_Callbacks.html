@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to CALLBACKS</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Introduction to Callbacks</h1>
+
+    <script>
+        console.log("Introduction to Callback");
+        // Before starting lets know Asynchronise & Synchronise,
+
+        // Synchronise actions that initiate and finish one by one
+
+        // Asynchronise actions that initiates now and finish later
+        // Example
+        console.log("Start");
+        setTimeout(function () {
+            console.log("Asynchronise Topic");
+        }, 5000);
+        console.log("End");
+
+        // Callback Functions with onload function 
+        // function loadScript(srcode) {
+        //     let script = document.createElement("script");
+        //     script.src = srcode;
+        //     document.body.appendChild(script);
+        //     script.onload = function(){ // onLoad function after complete execution of 
+        //                                 // complete execution function
+        //         console.log("Script Loaded src = " + srcode);
+        //     };
+        // }
+
+        // console.log("Before function of call back");
+        // loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js");
+        // console.log("After function of call back");
+
+
+        // Callback Functions with custom function
+        function loadScript(srcode, callback) {
+            let script = document.createElement("script");
+            script.src = srcode;
+            document.body.appendChild(script);
+            script.onload = function () { // onLoad function after complete execution of 
+                                          // complete execution function
+                console.log("Script Loaded src = " + srcode);
+                callback(srcode); // to run a argumental function & in arg the argumental functions argument
+
+
+                // callback(script);
+            }
+
+        }
+
+        function done(msg) {
+            alert("scr loaded Successfully done \n" + msg);
+        }
+        console.log("Before function of call back");
+        // loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", done);
+
+
+        
+        // loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", (script) => {
+        //     console.log("Function  defination in argument");
+        // });
+        console.log("After function of call back");
+    </script>
+</body>
+
+</html>

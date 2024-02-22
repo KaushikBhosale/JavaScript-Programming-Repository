@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- left or previous sibling of body -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent and Sibbling of an Element</title>
+</head>
+<!-- right or next sibling of body--><body><div class="first">First div </div><div class="second">Second Div</div>
+    <script>
+        console.log("first child of html");
+        console.log(document.documentElement.firstChild);// child of html is head
+        console.log("firstchild parent node");
+        console.log(document.documentElement.parentNode); // return node to know why see line number 1
+        console.log("firstchild parentElement");
+        console.log(document.documentElement.parentElement);// return null because html has no parent
+    </script>
+
+    <!-- rough just to learn DOM Collection -->
+    <p>This is a paragraph </p>
+    <h3>hedaing h3</h3>
+    <span>Hello World learning $0 an $1</span>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval and setTimeout</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>setInterval and setTimeout</h1>
+
+
+    <script>
+        document.write("In the Java Script");
+
+        const sum = (a, b) => {
+            console.log("I am Running ", (a + b));
+            alert("wowwww");
+            return a + b
+        }
+
+        let time = setTimeout(function () {
+            alert("after 5 seconds");
+        }, 5000);
+
+        let p = prompt("Do u want execute timeout y/n?");
+        if (p == "n") {
+            clearTimeout(time);
+            console.log("Time out cleared");
+        }
+        console.log(time);
+
+        let y = setTimeout(sum, 3000, 5, 5);
+        let i = 0;
+        let inter = setInterval(function () {
+            document.write("<h1>", i, "</h1>");
+            alert(i++);
+            p = prompt("Do u want execute timeout y/n?");
+            if (p == "n") {
+                clearInterval(inter);
+                console.log("out of interval");
+            }
+        }, 5000);
+
+
+    </script>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

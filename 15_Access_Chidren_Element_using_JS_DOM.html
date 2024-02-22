@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">  <!-- Parent of all tags -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Children of an Element usin JS DOM</title>
+</head>
+<body>
+    <h1>Thsi Accessing Chidren Elements</h1>
+    <div><!-- Parent of <p> and <span> -->
+        <p>This is a son of div</p><!-- Child of <div> -->
+        <span>This is a daughter of div</span>
+        <br>
+    </div>
+    <script>
+        console.log(document.body.firstChild);
+        console.log(document.body.lastChild);
+        console.log(document.body.childNodes);
+        console.log((document.body.childNodes[0])===(document.body.firstChild));
+        console.log((document.body.childNodes[document.body.childNodes.length-1])===(document.body.lastChild))
+
+        console.log(document.body.hasChildNodes() + " Check of Child Nodes");
+
+        // Note : childNodes are Collection not array 
+        //        but we can create array using 
+        //             Array.from(collection);
+        let nodearray= Array.from(document.body.childNodes);
+        console.log(nodearray);
+    </script>
+</body>
+</html>

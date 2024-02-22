@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter Setter And instance of Operator</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Getter Setter And instance of Operator</h1>
+
+    <script>
+        class Animal {
+            constructor(name) {
+                this._name = name;
+            }
+
+            fly() {
+                console.log(`May udd raha hu`);
+            }
+
+            set name(newName) {
+                this._name = newName;
+            }
+            get name() {
+                return this._name;
+            }
+        }
+
+        let a = new Animal("Sherrrr");
+        a.fly();
+        console.log(a.name);
+
+        a.name = "Tiger";
+        console.log(a.name);
+
+        console.log(a instanceof Animal);
+
+        let b = 7788;
+        console.log(b instanceof Animal);
+    </script>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

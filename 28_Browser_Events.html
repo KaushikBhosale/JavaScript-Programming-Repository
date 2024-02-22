@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Events</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--**********************************************************************************************
+                Introduction To Event Handler And Handling Browser Events
+                *********************************************************
+    **********************************************************************************************-->
+
+
+    <!-- 
+    <h1>Introduction to Browser Events</h1>
+
+    <div class="container" onmouseenter="console.log('container pai mouse hai');"
+        onclick="console.log('Container pai click hua...!');">
+        <button onclick="alert('YOO');">Click Me</button>
+    </div>
+
+    <script>
+        let a = document.getElementsByClassName("container")[0];
+        a.onclick = () => {
+            let c = document.getElementsByClassName("container")[0];
+            c.innerHTML = "<h1>Inner Html ussing Onclick Event Internal JavaScript </h1>";
+        };
+        // Adding a Handler with JS(internal or external) OVERWRITES the existing handler (inline script)
+        // If the clash is between internal js and external then internal js will overwriten
+    </script> 
+-->
+
+
+    <!--**********************************************************************************************
+                        addEventListner and removeEventListner
+                        **************************************
+    **********************************************************************************************-->
+
+    <h1>addEventListner and removeEventListner</h1>
+    <div>
+        <button id="btn">click me</button>
+    </div>
+
+    <script>
+        let L = function (e) {
+            console.log(e);
+            console.log(e.target);
+            console.log(e.type, e.clientX, e.clientY);
+            alert("hello");
+        };
+
+        let M = function (e) {
+            alert("hello World");
+        };
+
+        let x = document.getElementById("btn");
+        x.addEventListener("click", L);
+
+        // let y = document.getElementById("btn");
+        // y.addEventListener("click", M);
+
+        // let a = prompt("What is your Favourite Number?");
+        // if (a == 1) {
+        //     y.removeEventListener("click", M);
+        // }
+        // else if (a==2) {
+        //     y.removeEventListener("click", M);
+        //     x.removeEventListener("click", L);
+        // }
+    </script>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

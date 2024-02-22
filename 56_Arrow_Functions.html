@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Arrow Function</h1>
+
+    <script>
+        // const sayHello = (name) => {
+        //     console.log(`Hellooo ${name}`);
+        //     console.log("How are y");
+        // }
+        // sayHello("Kaushik");
+
+        // const sayHello = (name) => console.log(`Hellooo ${name}`); console.log("How are y");
+        // sayHello("Kaushik");
+
+        // without () valid for one argument
+        // const sayHello = name => console.log(`Hellooo ${name}`); console.log("How are y");
+        // sayHello("Kaushik");
+
+        const sayHello = (name, greet) => console.log(`Hellooo ${name} ${greet}`); console.log("How are y");
+        sayHello("Kaushik", "Good Afternoon");
+
+        const x = {
+            name: "Chinmay",
+            ex: 30,
+            role: "Developer",
+
+            show : function() {
+                // let that = this;
+                // console.log(this); //this is now a window object
+                // setTimeout(function() {
+                setTimeout(()=> {
+                    // console.log(`The name is ${that.name}\n The Role is ${that.role}`);
+                    console.log(`The name is ${this.name},\nThe Role is ${this.role}`);
+                }, 2000);
+            }
+        }
+
+        console.log(x.name,x.ex,x.role);
+        x.show()
+    </script>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

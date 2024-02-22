@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid of DOOM</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Pyramid of DOOM or Callback hell</h1>
+    <h3>When we have callback inside callbacks, the code gets difficult to manage,
+        because it increases the indendation also it is difficult to read a code.
+        Below we have a example from line number 42.
+        To solve this problem we use promises which is next file</h3>
+
+    <script>
+        function senddMessageToCeo() {
+            console.log("Company is in Danger Wake Uppppp...")
+        }
+
+        function loadScript(srcode, callback) {
+            let script = document.createElement("script");
+            script.src = srcode;
+            document.body.appendChild(script);
+
+            script.onload = function () {
+                callback(null, srcode);
+            }
+
+            script.onerror = function () {
+                console.log("Error Loading invalid source code or source code not found " + srcode)
+                callback(new Error("source code got some errors"));
+            }
+        }
+
+        loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", function success(error, msg) {
+            if (error) {
+                console.log(error);
+                senddMessageToCeo();
+                return
+            }
+            loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", function success(error, msg) {
+                if (error) {
+                    console.log(error);
+                    senddMessageToCeo();
+                    return
+                }
+                loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", function success(error, msg) {
+                    if (error) {
+                        console.log(error);
+                        senddMessageToCeo();
+                        return
+                    }
+                    loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", function success(error, msg) {
+                        if (error) {
+                            console.log(error);
+                            senddMessageToCeo();
+                            return
+                        }
+                        loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js", function success(error, msg) {
+                            if (error) {
+                                console.log(error);
+                                senddMessageToCeo();
+                                return
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

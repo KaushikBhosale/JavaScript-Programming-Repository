@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Only Navigation</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About Me</li>
+            <li>Hire Me</li>
+        </ul>
+    </nav>
+    <div class="container">
+        I Like Playing Cricket
+    </div>
+    <script>
+        const bodybgcolor = () =>{
+            document.body.firstElementChild.style.background="yellow";
+        }
+
+        let b = document.body;
+        console.log("First Child of b : ", b.firstChild);
+        console.log("First Element Child of b : ", b.firstElementChild);
+
+        console.log(b.previousElementSibling);
+        console.log("What",b.nextElementSibling); // null because html does not have any sibling
+                                                  // it is a root element
+        console.log(b.firstElementChild);
+        console.log(b.lastElementChild);
+    </script>
+</body>
+</html>
